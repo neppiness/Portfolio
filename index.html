@@ -16,7 +16,7 @@
 </head>
 <body>
     <!-- NAVBAR -->
-    <nav id="navbar" class="section">
+    <nav id="navbar" class="section section__container">
         <div class="navbar__logo">
             <i class="fa-solid fa-moon"></i>
             <a href="#">Neppy</a>
@@ -43,7 +43,7 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section">
+    <section id="about" class="section section__container">
         <h1>About Me</h1>
         <p>I've worked as an architectural engineer since 2018.<br/>
             Bachelor's degree at Korea Univ.<br/>
@@ -98,15 +98,35 @@
             Always self-initiated to study. Love to build PCs, troubleshoot and overclock hardwares.</br>
             Consider collaboration as a first priority.</br>
         </p>
-        <div class="skillset">
+        <div class="skillset section__container">
             <div class="skillset__left">
-                <h3 class="skillset__title">Skill</h3>
+                <h3 class="skillset__title">Skills</h3>
                 <div class="skill">
-                    <span>HTML</span>
-                    <span>20%</span>
+                    <div class="skill__description">
+                        <span>HTML</span>
+                        <span>50%</span>
+                    </div>
+                    <div class="skill__bar">
+                        <div class="skill__value" style="width: 50%"></div>
+                    </div>
                 </div>
-                <div class="skill__bar">
-                    <div class="skill__value"></div>
+                <div class="skill">
+                    <div class="skill__description">
+                        <span>CSS</span>
+                        <span>30%</span>
+                    </div>
+                    <div class="skill__bar">
+                        <div class="skill__value" style="width: 30%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill__description">
+                        <span>JavaScript</span>
+                        <span>10%</span>
+                    </div>
+                    <div class="skill__bar">
+                        <div class="skill__value" style="width: 10%"></div>
+                    </div>
                 </div>
             </div>
             <div class="skillset__right">
