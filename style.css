@@ -10,6 +10,7 @@
   --color-dark-grey: #4d4d4d;
   --color-light-grey: #7c7979;
   --color-blue: #2eb8f3;
+  --color-dark-blue: #2c60f5;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
@@ -115,12 +116,23 @@ h3 {
 }
 
 .navbar__menu__item:hover {
-  background-color: var(--color-dark-grey);
+  background-color: var(--color-white);
+  color: var(--color-blue);
+  transition: all var(--animation-duration) ease;
 }
 
 .navbar__menu__item.active {
   border: 1px solid var(--color-white);
   border-radius: var(--size-border-radius);
+}
+
+.navbar__toggle-btn {
+  position: absolute;
+  right: 32px;
+  top: 20px;
+  font-size: 24px;
+  color: var(--color-white);
+  display: none;
 }
 
 /* Home */
@@ -150,6 +162,13 @@ h3 {
   padding: 8px 12px;
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
+}
+
+.home__contact:hover {
+  color: var(--color-blue);
+  border: 2px solid var(--color-blue);
+  background-color: var(--color-white);
+  transition: all var(--animation-duration) ease-in-out;
 }
 
 /* Section common */
@@ -442,4 +461,44 @@ h3 {
 .contact__links i:hover {
   transform: scale(1.1);
   transition: all var(--animation-duration) ease-in;
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .about__majors {
+    flex-direction: column;
+  }
+
+  .major {
+    margin-bottom: 38px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .projects {
+    flex-grow: 1;
+  }
+
+  .testimonial__avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
