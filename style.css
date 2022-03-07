@@ -104,6 +104,7 @@ h3 {
   left: 50%;
   background-color: transparent;
   padding: 0;
+  z-index: 1;
 }
 
 #navbar {
@@ -166,6 +167,10 @@ h3 {
   padding: 40px;
   padding-top: 120px;
   text-align: center;
+}
+
+#home::after {
+  color: var(--color-light-white);
 }
 
 .home__avatar {
