@@ -482,6 +482,31 @@ h3 {
   transition: all var(--animation-duration) ease-in;
 }
 
+/* Upper Arrow */
+.fa-angles-up {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  font-size: var(--font-medium);
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  padding: 11px 14.5px;
+  border-radius: 50%;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility var(--animation-duration),
+    opacity var(--animation-duration) linear;
+  pointer-events: none;
+}
+
+.upperArrow--visible {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility var(--animation-duration),
+    opacity var(--animation-duration) linear;
+}
+
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
