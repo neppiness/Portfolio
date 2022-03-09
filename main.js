@@ -67,3 +67,31 @@ document.addEventListener('scroll', () => {
         upperArrow.classList.remove('upperArrow--visible');
     }
 });
+
+// Filtering the works as the clicked category
+const workCategories = document.querySelector('.work__categories');
+const works = document.getElementsByClassName('projects');
+
+for (let i = 0; i < works.length; i++) {
+    works[i].classList.add('work--visible');
+}
+
+workCategories.addEventListener('click', (event) => {
+    let eventTargetFilter = event.target.dataset.filter;
+    const filteredWorks = document.getElementsByClassName(eventTargetFilter);
+    
+    if (filteredWorks != 'none') {
+        if (eventTargetFilter === 'all') {
+            for (let i = 0; i < works.length; i++) {
+                works[i].classList.add('work--visible');
+            }
+        } else {
+            for (let i = 0; i < works.length; i++) {
+                works[i].classList.remove('work--visible');
+            }
+            for (let i = 0; i < filteredWorks.length; i++) {
+                filteredWorks[i].classList.add('work--visible');
+            }
+        }
+    }
+});

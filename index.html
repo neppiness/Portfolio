@@ -52,30 +52,33 @@
     <!-- ABOUT -->
     <section id="about" class="section section__container">
         <h1>About Me</h1>
-        <p>I've worked as an architectural engineer since 2018.<br/>
-            Bachelor's degree at Korea Univ.<br/>
-            Master's degree at Seoul National Univ.</p>
+        <p>I've worked as an architectural engineer since 2018.<br>
+        I've learned essential skills and tools for a front-end developer since February 2022.<br><br>
+        
+        Learned Python when I worked at R&amp;D Team in SENVEX.<br>
+        Learned C++ language when I was a highschool student.</p>
+
         <div class="about__majors">
             <div class="major">
                 <div class="major__icon">
                     <i class="fa-brands fa-html5"></i>
                 </div>
                 <h2 class="major__title">HTML</h2>
-                <p class="major__description">BlahBlahBlahBlahBlahBlahBlahBlahBlah</p>
+                <p class="major__description">Webpage structure build with HTML</p>
             </div>
             <div class="major">
                 <div class="major__icon">
                     <i class="fa-solid fa-file-code"></i>
                 </div>
                 <h2 class="major__title">CSS</h2>
-                <p class="major__description">BlahBlahBlahBlahBlahBlahBlahBlahBlah</p>
+                <p class="major__description">Webpage styling</p>
             </div>
             <div class="major">
                 <div class="major__icon">
                     <i class="fa-brands fa-js"></i>
                 </div>
                 <h2 class="major__title">JavaScript</h2>
-                <p class="major__description">BlahBlahBlahBlahBlahBlahBlahBlahBlah</p>
+                <p class="major__description">Dynamic webpage control</p>
             </div>
         </div>
         <div class="about__jobs">
@@ -142,18 +145,16 @@
                         <h3 class="skillset__title">Tools</h3>
                         <ul class="tools__list">
                             <li><span>Visual Studio Code</span></li>
-                            <li><span>Something</span></li>
-                            <li><span>Something</span></li>
-                            <li><span>Something</span></li>
-                            <li><span>Something</span></li>
+                            <li><span>Git & Github</span></li>
                         </ul>
                     </div>
                     <div class="etc">
                         <h3 class="skillset__title">Etc</h3>
                         <ul class="etc__list">
-                            <li><span>Git</span></li>
                             <li><span>PC Build</span></li>
                             <li><span>Troubleshooting</span></li>
+                            <li><span>Word Processors</span></li>
+                            <li><span>Spread Sheets</span></li>
                         </ul>
                     </div>
                 </div>
@@ -166,100 +167,108 @@
         <h1>My Work</h1>
         <h3>Projects</h3>
         <div class="work__categories">
-            <button class="category__btn active">All <span class="category__count">8</span></button>
-            <button class="category__btn">Front-end <span class="category__count">3</span> </button>
-            <button class="category__btn">Back-end <span class="category__count">3</span> </button>
-            <button class="category__btn">Mobile <span class="category__count">2</span> </button>
+            <button class="category__btn active" data-filter="all">All
+                <span class="category__count" data-filter="all">8</span>
+            </button>
+            <button class="category__btn" data-filter="front-end">Front-end
+                <span class="category__count" data-filter="front-end">3</span>
+            </button>
+            <button class="category__btn" data-filter="back-end">Back-end
+                <span class="category__count" data-filter="back-end">3</span>
+            </button>
+            <button class="category__btn" data-filter="mobile">Mobile
+                <span class="category__count" data-filter="mobile">2</span>
+            </button>
         </div>
         <div class="section__container">
             <div class="work__projects">
                 <a
                 href="#"
-                class="projects"
+                class="projects front-end"
                 target="blank"
                 >
-                <img src="imgs/proj/project1.png" alt="proj 1" class="project">
-                <div class="projects__description">
-                    <h3>Youtube Site</h3>
-                    <span>Clone coding with HTML and CSS</span>
-                </div>
+                    <img src="imgs/proj/project1.png" alt="proj 1" class="project">
+                    <div class="projects__description">
+                        <h3>Youtube Site</h3>
+                        <span>Clone coding with HTML and CSS</span>
+                    </div>
+                    </a>
+                <a
+                href="#"
+                class="projects back-end"
+                target="blank"
+                >
+                    <img src="imgs/proj/project2.png" alt="proj 2" class="project">
+                    <div class="projects__description">
+                        <h3>Personal Webpage Design</h3>
+                        <span>Responsive web design with HTML and CSS</span>
+                    </div>
                 </a>
                 <a
                 href="#"
-                class="projects"
+                class="projects front-end"
                 target="blank"
                 >
-                <img src="imgs/proj/project2.png" alt="proj 1" class="project">
-                <div class="projects__description">
-                    <h3>Project 2</h3>
-                    <span>Project 2</span>
-                </div>
+                    <img src="imgs/proj/project3.png" alt="proj 3" class="project">
+                    <div class="projects__description">
+                        <h3>Merchandise Web Design-1</h3>
+                        <span>Using HTML, CSS and JavaScript</span>
+                    </div>
                 </a>
                 <a
                 href="#"
-                class="projects"
+                class="projects back-end"
                 target="blank"
                 >
-                <img src="imgs/proj/project3.png" alt="proj 1" class="project">
-                <div class="projects__description">
-                    <h3>Project 3</h3>
-                    <span>Project 3</span>
-                </div>
+                    <img src="imgs/proj/project4.png" alt="proj 4" class="project">
+                    <div class="projects__description">
+                        <h3>Merchandise Web Design-2</h3>
+                        <span>Shopping and pay funciton addition</span>
+                    </div>
                 </a>
                 <a
                 href="#"
-                class="projects"
+                class="projects mobile"
                 target="blank"
                 >
-                <img src="imgs/proj/project4.png" alt="proj 1" class="project">
-                <div class="projects__description">
-                    <h3>Project 4</h3>
-                    <span>Project 4</span>
-                </div>
+                    <img src="imgs/proj/project5.png" alt="proj 5" class="project">
+                    <div class="projects__description">
+                        <h3>Mobile Project-1</h3>
+                        <span>Application design</span>
+                    </div>
                 </a>
                 <a
                 href="#"
-                class="projects"
+                class="projects back-end"
                 target="blank"
                 >
-                <img src="imgs/proj/project5.png" alt="proj 1" class="project">
-                <div class="projects__description">
-                    <h3>Project 5</h3>
-                    <span>Project 5</span>
-                </div>
+                    <img src="imgs/proj/project6.png" alt="proj 6" class="project">
+                    <div class="projects__description">
+                        <h3>Fresh Orange</h3>
+                        <span>Essential server logic and data process setup</span>
+                    </div>
                 </a>
                 <a
                 href="#"
-                class="projects"
+                class="projects mobile"
                 target="blank"
                 >
-                <img src="imgs/proj/project6.png" alt="proj 1" class="project">
-                <div class="projects__description">
-                    <h3>Projects 6</h3>
-                    <span>Projects 6</span>
-                </div>
+                    <img src="imgs/proj/project7.png" alt="proj 7" class="project">
+                    <div class="projects__description">
+                        <h3>Mobile Project-2</h3>
+                        <span>Mobile application optimization</span>
+                    </div>
                 </a>
                 <a
                 href="#"
-                class="projects"
+                class="projects front-end"
                 target="blank"
                 >
-                <img src="imgs/proj/project7.png" alt="proj 1" class="project">
-                <div class="projects__description">
-                    <h3>Projects 7</h3>
-                    <span>Projects 7 description</span>
-                </div>
-                </a>
-                <a
-                href="#"
-                class="projects"
-                target="blank"
-                >
-                <img src="imgs/proj/project8.png" alt="proj 1" class="project">
-                <div class="projects__description">
-                    <h3>Projects 8</h3>
-                    <span>Projects 8 description</span>
-                </div>
+                    <img src="imgs/proj/project8.png" alt="proj 8" class="project">
+                    <div class="projects__description">
+                        <h3>Presentation Template Distribution Site</h3>
+                        <span>Web page design using HTML, CSS and JavaScript</span>
+                    </div>
                 </a>
             </div>
         </div> 

@@ -206,7 +206,7 @@ h3 {
 .about__majors {
   display: flex;
   justify-content: space-between;
-  margin: 80px 0;
+  margin: 50px 0;
 }
 
 .major__icon {
@@ -225,6 +225,10 @@ h3 {
   color: var(--color-pink);
   transform: rotate(-20deg) scale(1.1);
   transition: all var(--animation-duration) ease;
+}
+
+h2.major__title {
+  color: var(--color-blue);
 }
 
 .major__description {
@@ -364,13 +368,17 @@ h3 {
 
 .projects {
   position: relative;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 280px;
   height: 250px;
   margin: 2px;
   background-color: var(--color-light-white);
+}
+
+.work--visible {
+  display: flex;
 }
 
 .project img {
