@@ -79,7 +79,6 @@ for (let i = 0; i < works.length; i++) {
 workCategories.addEventListener('click', (event) => {
     let eventTargetFilter = event.target.dataset.filter;
     const filteredWorks = document.getElementsByClassName(eventTargetFilter);
-    const workProjects = document.querySelector('.work__projects');
 
     if (filteredWorks === 'none') {
         return;
@@ -109,4 +108,24 @@ workCategories.addEventListener('click', (event) => {
             works[i].classList.remove('animation--out');
         }
     }, 350);
+});
+
+// Active state reorganization
+workCategories.addEventListener('click', (event) => {
+    let eventTargetFilter = event.target.dataset.filter;
+    if (eventTargetFilter === 'none') {
+        return;
+    }
+
+    const activatedButton = workCategories.querySelector('.active');
+    activatedButton.classList.remove('active');
+
+    const categoryBtn = document.getElementsByClassName('category__btn');
+    
+    for (let i = 0; i < categoryBtn.length; i++) {
+        let targetCategoryBtnFilter = categoryBtn[i].dataset.filter;
+        if (targetCategoryBtnFilter === eventTargetFilter) {
+            categoryBtn[i].classList.add('active');
+        }
+    }
 });
