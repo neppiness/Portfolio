@@ -79,8 +79,17 @@ for (let i = 0; i < works.length; i++) {
 workCategories.addEventListener('click', (event) => {
     let eventTargetFilter = event.target.dataset.filter;
     const filteredWorks = document.getElementsByClassName(eventTargetFilter);
-    
-    if (filteredWorks != 'none') {
+    const workProjects = document.querySelector('.work__projects');
+
+    if (filteredWorks === 'none') {
+        return;
+    }
+
+    for (let i = 0; i < works.length; i++) {
+        works[i].classList.add('animation--out');
+    }
+
+    setTimeout(() => {
         if (eventTargetFilter === 'all') {
             for (let i = 0; i < works.length; i++) {
                 works[i].classList.add('work--visible');
@@ -93,5 +102,11 @@ workCategories.addEventListener('click', (event) => {
                 filteredWorks[i].classList.add('work--visible');
             }
         }
-    }
+    }, 250);
+
+    setTimeout(() => {
+        for (let i = 0; i < works.length; i++) {
+            works[i].classList.remove('animation--out');
+        }
+    }, 350);
 });
