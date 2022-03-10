@@ -336,6 +336,7 @@ h2.major__title {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.active,
@@ -347,7 +348,7 @@ h2.major__title {
 .category__btn.active .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 4px;
 }
 
 .category__count {
@@ -359,9 +360,9 @@ h2.major__title {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration);
 }
@@ -530,13 +531,26 @@ h2.major__title {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  /* Font size */
+  :root {
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
   .navbar__toggle-btn,
   .navbar__toggle-btn.dark {
     display: block;
     position: absolute;
     right: 20px;
-    top: 12px;
-    font-size: 24px;
+    top: 10px;
+    font-size: 18px;
     color: var(--color-white);
     transition: all var(--animation-duration) ease-in-out;    
   }
@@ -574,24 +588,59 @@ h2.major__title {
     margin: 2px 4px;
   }
 
+  .home__avatar {
+    width: 210px;
+    height: 210px;
+  }
+
   .about__majors {
     flex-direction: column;
+    margin: 20px;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 0px;
   }
 
   .skillset {
     flex-direction: column;
   }
 
+  .category__btn {
+    margin: 2px 0;
+    position: relative;
+  }
+
   .projects {
     flex-grow: 1;
+  }
+
+  .testimonial:nth-child(odd){
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+  .testimonial:nth-child(even) {
+    flex-direction: column-reverse;
+    align-items: center;
   }
 
   .testimonial__avatar {
     width: 80px;
     height: 80px;
+    margin: 5px 0;
+  }
+
+  .testimonial__avatar:nth-child(odd) {
+    margin-right: 0px;
+  }
+  
+  .testimonial__avatar:nth-child(even) {
+    margin-left: 0px;
+  }
+
+  #Testimonials {
+    margin: 0;
   }
 }
