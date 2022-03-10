@@ -110,43 +110,10 @@ workCategories.addEventListener('click', (event) => {
     }, 350);
 });
 
-// Navbar button activation setup
-navbarMenu.addEventListener('click', (event) => {
-    let eventTargetLink = event.target.dataset.link;
-    if (eventTargetLink === 'none') {
-        return;
-    }
-
-    const activatedBtn = navbarMenu.querySelector('.active');
-    activatedBtn.classList.remove('active');
-
-    const navbarMenuBtns = document.getElementsByClassName('navbar__menu__item');
-    console.log(navbarMenuBtns);
-
-    for (let i = 0; i < navbarMenuBtns.length; i++) {
-        let targetNavbarMenuBtn = navbarMenuBtns[i].dataset.link;
-        if (targetNavbarMenuBtn === eventTargetLink) {
-            navbarMenuBtns[i].classList.add('active');
-        }
-    }
-});
-
 // Project filtering button activation setup
 workCategories.addEventListener('click', (event) => {
-    let eventTargetFilter = event.target.dataset.filter;
-    if (eventTargetFilter === 'none') {
-        return;
-    }
-
     const activatedButton = workCategories.querySelector('.active');
     activatedButton.classList.remove('active');
-
-    const categoryBtn = document.getElementsByClassName('category__btn');
-    
-    for (let i = 0; i < categoryBtn.length; i++) {
-        let targetCategoryBtnFilter = categoryBtn[i].dataset.filter;
-        if (targetCategoryBtnFilter === eventTargetFilter) {
-            categoryBtn[i].classList.add('active');
-        }
-    }
+    let eventTarget = event.target;
+    eventTarget.classList.add('active');
 });
