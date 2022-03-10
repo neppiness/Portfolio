@@ -420,7 +420,7 @@ h2.major__title {
 }
 
 .projects__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .projects__description h3:after {
@@ -530,15 +530,31 @@ h2.major__title {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
-  .navbar__toggle-btn {
+  .navbar__toggle-btn,
+  .navbar__toggle-btn.dark {
     display: block;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    font-size: 24px;
+    color: var(--color-white);
+    transition: all var(--animation-duration) ease-in-out;    
   }
 
-  #navbar {
+  #navbar,
+  #navbar.navbar--dark {
+    background-color: var(--color-blue);
+    transition: all var(--animation-duration) ease-in-out;
+    padding: 8px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-blue);
     flex-direction: column;
     align-items: flex-start;
   }
-
+  
   .navbar__menu {
     flex-direction: column;
     text-align: center;
