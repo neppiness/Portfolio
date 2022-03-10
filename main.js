@@ -3,12 +3,15 @@
 // Make navbar opaque when it is not on the top
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn'); 
 
 document.addEventListener('scroll', () => {
     if(window.scrollY > navbarHeight) {
         navbar.classList.add('navbar--dark');
+        navbarToggleBtn.classList.add('dark');
     } else {
         navbar.classList.remove('navbar--dark');
+        navbarToggleBtn.classList.remove('dark');
     }
 });
 
@@ -32,7 +35,7 @@ homeContactBtn.addEventListener('click', (event) => {
     }
 });
 
-// Home screen fadeout as the window scrolls down
+// Home screen fadeout while the window scrolls down
 const homeSection = document.querySelector('section#home');
 const homeTitle = document.querySelector('h1.home__title');
 const homeDescription = document.querySelector('h2.home__description');
@@ -116,4 +119,19 @@ workCategories.addEventListener('click', (event) => {
     activatedButton.classList.remove('active');
     let eventTarget = event.target;
     eventTarget.classList.add('active');
+});
+
+// Show navbar__menu using the navbar toggle button
+navbarToggleBtn.addEventListener('click', (event) => {
+    if (navbarMenu.classList.value == 'navbar__menu') {
+        navbarMenu.classList.add('show');
+    } else {
+        navbarMenu.classList.remove('show');
+    }
+});
+
+navbarMenu.addEventListener('click', (event) => {
+    if (navbarMenu.classList.value == 'navbar__menu show') {
+        navbarMenu.classList.remove('show');
+    }
 });
