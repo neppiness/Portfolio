@@ -110,7 +110,28 @@ workCategories.addEventListener('click', (event) => {
     }, 350);
 });
 
-// Active state reorganization
+// Navbar button activation setup
+navbarMenu.addEventListener('click', (event) => {
+    let eventTargetLink = event.target.dataset.link;
+    if (eventTargetLink === 'none') {
+        return;
+    }
+
+    const activatedBtn = navbarMenu.querySelector('.active');
+    activatedBtn.classList.remove('active');
+
+    const navbarMenuBtns = document.getElementsByClassName('navbar__menu__item');
+    console.log(navbarMenuBtns);
+
+    for (let i = 0; i < navbarMenuBtns.length; i++) {
+        let targetNavbarMenuBtn = navbarMenuBtns[i].dataset.link;
+        if (targetNavbarMenuBtn === eventTargetLink) {
+            navbarMenuBtns[i].classList.add('active');
+        }
+    }
+});
+
+// Project filtering button activation setup
 workCategories.addEventListener('click', (event) => {
     let eventTargetFilter = event.target.dataset.filter;
     if (eventTargetFilter === 'none') {
