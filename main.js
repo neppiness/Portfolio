@@ -135,3 +135,18 @@ navbarMenu.addEventListener('click', (event) => {
         navbarMenu.classList.remove('show');
     }
 });
+
+// Activate the navbar__menu__item when it is clicked
+const navbarMenuItem = navbarMenu.getElementsByClassName('navbar__menu__item');
+console.log(navbarMenuItem);
+
+navbarMenu.addEventListener('click', (event) => {
+    const activatedNavbarMenuItem = navbarMenu.querySelector('.active');
+    if (activatedNavbarMenuItem != null) {
+        console.log(activatedNavbarMenuItem);
+        activatedNavbarMenuItem.classList.remove('active');
+    }
+
+    let eventTarget = event.target;
+    eventTarget.classList.add('active');
+});
