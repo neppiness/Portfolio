@@ -137,16 +137,46 @@ navbarMenu.addEventListener('click', (event) => {
 });
 
 // Activate the navbar__menu__item when it is clicked
-const navbarMenuItem = navbarMenu.getElementsByClassName('navbar__menu__item');
-console.log(navbarMenuItem);
+const navbarMenuItems = navbarMenu.getElementsByClassName('navbar__menu__item');
 
 navbarMenu.addEventListener('click', (event) => {
     const activatedNavbarMenuItem = navbarMenu.querySelector('.active');
+    console.log(activatedNavbarMenuItem); 
     if (activatedNavbarMenuItem != null) {
-        console.log(activatedNavbarMenuItem);
         activatedNavbarMenuItem.classList.remove('active');
     }
 
     let eventTarget = event.target;
+    console.log(eventTarget);
     eventTarget.classList.add('active');
+});
+
+
+// Activate the navbar menu item when its related section is on the view.
+const sectionList = document.querySelectorAll('section');
+let sectionHeight = [];
+let accumulatedSectionHeight = [];
+
+for (let i = 0; i < sectionList.length; i++) {
+    sectionHeight.push(sectionList[i].getBoundingClientRect().height);
+}
+
+accumulatedSectionHeight.push(sectionHeight[0]);
+
+for (let i = 1; i < sectionHeight.length; i++) {
+    accumulatedSectionHeight.push(accumulatedSectionHeight[i-1]+sectionHeight[i]);
+}
+
+document.addEventListener('scroll', () => {
+    const activatedNavbarMenuItem = navbarMenu.querySelector('.active');
+
+    for (let i = 1; i < accumulatedSectionHeight.length; i++) {
+        if (window.scrollY < accumulatedSectionHeight[i]) {
+            if (activatedNavbarMenuItem != navbarMenuItems[i-1]) {
+                activatedNavbarMenuItem.classList.remove('active');
+            }
+            navbarMenuItems[i-1].classList.add('active');
+            break;
+        }
+    }
 });
