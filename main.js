@@ -151,19 +151,19 @@ navbarMenu.addEventListener('click', (event) => {
 });
 
 // Activate the navbar menu item when its related section is on the view.
-const options = {
+const observerOptions = {
     root: null, // viewport
-    rootMargin: '0px',
-    threshold: 0.02
+    rootMargin: '-100px',
+    threshold: 0
 };
 
-const callback = (entries, observer) => {
+const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.target.id == 'nav') {return;}
 
         let targetNavbarMenuItem
         = document.querySelector('ul[data-link="#'+entry.target.id+'"]');
-        
+        // = document.querySelector('ul[data-link="#'${entry.target.id}'"]');
         if(entry.isIntersecting) {
             targetNavbarMenuItem.dataset.selected = 'true';
         } else {
@@ -185,6 +185,6 @@ const callback = (entries, observer) => {
 };
 
 const sectionList = document.querySelectorAll('section');
-const observer = new IntersectionObserver(callback, options);
+const observer = new IntersectionObserver(observerCallback, observerOptions);
 
 sectionList.forEach(aSection => observer.observe(aSection));
