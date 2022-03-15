@@ -141,7 +141,6 @@ const navbarMenuItems = navbarMenu.getElementsByClassName('navbar__menu__item');
 
 navbarMenu.addEventListener('click', (event) => {
     const activatedNavbarMenuItem = navbarMenu.querySelector('.active');
-    console.log(activatedNavbarMenuItem); 
     if (activatedNavbarMenuItem != null) {
         activatedNavbarMenuItem.classList.remove('active');
     }
@@ -151,12 +150,11 @@ navbarMenu.addEventListener('click', (event) => {
     eventTarget.classList.add('active');
 });
 
-
 // Activate the navbar menu item when its related section is on the view.
 const options = {
     root: null, // viewport
     rootMargin: '0px',
-    threshold: 0
+    threshold: 0.02
 };
 
 const callback = (entries, observer) => {
