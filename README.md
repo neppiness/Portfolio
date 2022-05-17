@@ -1,4 +1,4 @@
-# **Jeong-hyun Kim's Porfolio page**
+# **Jeong-hyun Kim's Porfolio page source codes**
 
 - Based on HTML and CSS basics
 - Event processing using JS
