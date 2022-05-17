@@ -141,7 +141,6 @@ const navbarMenuItems = navbarMenu.getElementsByClassName('navbar__menu__item');
 
 navbarMenu.addEventListener('click', (event) => {
     const activatedNavbarMenuItem = navbarMenu.querySelector('.active');
-    console.log(activatedNavbarMenuItem); 
     if (activatedNavbarMenuItem != null) {
         activatedNavbarMenuItem.classList.remove('active');
     }
@@ -151,32 +150,41 @@ navbarMenu.addEventListener('click', (event) => {
     eventTarget.classList.add('active');
 });
 
-
 // Activate the navbar menu item when its related section is on the view.
-const sectionList = document.querySelectorAll('section');
-let sectionHeight = [];
-let accumulatedSectionHeight = [];
+const observerOptions = {
+    root: null, // viewport
+    rootMargin: '-100px',
+    threshold: 0
+};
 
-for (let i = 0; i < sectionList.length; i++) {
-    sectionHeight.push(sectionList[i].getBoundingClientRect().height);
-}
+const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.target.id == 'nav') {return;}
 
-accumulatedSectionHeight.push(sectionHeight[0]);
-
-for (let i = 1; i < sectionHeight.length; i++) {
-    accumulatedSectionHeight.push(accumulatedSectionHeight[i-1]+sectionHeight[i]);
-}
-
-document.addEventListener('scroll', () => {
-    const activatedNavbarMenuItem = navbarMenu.querySelector('.active');
-
-    for (let i = 1; i < accumulatedSectionHeight.length; i++) {
-        if (window.scrollY < accumulatedSectionHeight[i]) {
-            if (activatedNavbarMenuItem != navbarMenuItems[i-1]) {
-                activatedNavbarMenuItem.classList.remove('active');
-            }
-            navbarMenuItems[i-1].classList.add('active');
-            break;
+        let targetNavbarMenuItem
+        = document.querySelector('ul[data-link="#'+entry.target.id+'"]');
+        // = document.querySelector('ul[data-link="#'${entry.target.id}'"]');
+        if(entry.isIntersecting) {
+            targetNavbarMenuItem.dataset.selected = 'true';
+        } else {
+            targetNavbarMenuItem.dataset.selected = 'false';
         }
-    }
-});
+    });
+
+    const NavbarMenuItems = navbarMenu.querySelectorAll('.navbar__menu__item');
+    const selectedNavbarMenuItem
+    = navbarMenu.querySelector('.navbar__menu__item[data-selected="true"]');
+
+    NavbarMenuItems.forEach(item => {
+        if (item != selectedNavbarMenuItem) {
+            item.classList.remove('active');
+        } else {
+            item.classList.add('active');
+        }
+    });
+};
+
+const sectionList = document.querySelectorAll('section');
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+sectionList.forEach(aSection => observer.observe(aSection));
