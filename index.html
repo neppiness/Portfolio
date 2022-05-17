@@ -27,7 +27,9 @@
                 <ul class="navbar__menu__item" data-link="#about">About</ul>
                 <ul class="navbar__menu__item" data-link="#skills">Skills</ul>
                 <ul class="navbar__menu__item" data-link="#work">My Works</ul>
+                <!-- DISABLED
                 <ul class="navbar__menu__item" data-link="#Testimonials">Testimonials</ul>
+                -->
                 <ul class="navbar__menu__item" data-link="#contact">Contact</ul>
             </div>
             <!-- Toggle button -->
@@ -45,7 +47,7 @@
         class="home__avatar"
         />
         <h1 class="home__title">Hello,<br/> I'm JeongHyun Kim</h1>
-        <h2 class="home__description">wanna be a front-end developer</h2>
+        <h2 class="home__description">prepare to be a developer</h2>
         <button class="home__contact" data-link="#contact">Contact Me</button>
     </section>
 
@@ -105,9 +107,11 @@
             <h1>Skills</h1>
             <h2>Skills & Attributes</h2>
             <p>
-                I've been studied the essential skills for front-end development.</br>
-                Always self-initiated to study. Love to build PCs, troubleshoot and overclock hardwares.</br>
-                Consider collaboration as a top priority.</br>
+                
+                Studying the essential skills</br>
+                Always self-initiated to study</br>
+                Consider collaboration as a top priority</br>
+                
             </p>
             <div class="skillset">
                 <div class="skillset__left">
@@ -115,6 +119,15 @@
                     <div class="skill">
                         <div class="skill__description">
                             <span>HTML</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>CSS</span>
                             <span>50%</span>
                         </div>
                         <div class="skill__bar">
@@ -123,20 +136,29 @@
                     </div>
                     <div class="skill">
                         <div class="skill__description">
-                            <span>CSS</span>
-                            <span>30%</span>
+                            <span>JavaScript</span>
+                            <span>60%</span>
                         </div>
                         <div class="skill__bar">
-                            <div class="skill__value" style="width: 30%"></div>
+                            <div class="skill__value" style="width: 60%"></div>
                         </div>
                     </div>
                     <div class="skill">
                         <div class="skill__description">
-                            <span>JavaScript</span>
-                            <span>10%</span>
+                            <span>MySQL</span>
+                            <span>40%</span>
                         </div>
                         <div class="skill__bar">
-                            <div class="skill__value" style="width: 10%"></div>
+                            <div class="skill__value" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>Python</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" style="width: 50%"></div>
                         </div>
                     </div>
                 </div>
@@ -146,6 +168,7 @@
                         <ul class="tools__list">
                             <li><span>Visual Studio Code</span></li>
                             <li><span>Git & Github</span></li>
+                            <li><span>Command Line Interface</span></li>
                         </ul>
                     </div>
                     <div class="etc">
@@ -162,7 +185,8 @@
         </div>
     </section>
 
-    <!-- WORK -->
+    <!-- WORK: REFERENCE -->
+    <!--
     <section id="work" class="section">
         <h1>My Work</h1>
         <h3>Projects</h3>
@@ -273,8 +297,67 @@
             </div>
         </div> 
     </section>
+    -->
+
+    <!-- MY WORK -->
+    <section id="work" class="section">
+        <h1>My Works</h1>
+        <h3>What I've done using computer languages</h3>
+        <div class="work__categories">
+            <button class="category__btn active" data-filter="all">All
+                <span class="category__count" data-filter="all">3</span>
+            </button>
+            <button class="category__btn" data-filter="front-end">Front-end
+                <span class="category__count" data-filter="front-end">1</span>
+            </button>
+            <button class="category__btn" data-filter="back-end">Back-end
+                <span class="category__count" data-filter="back-end">1</span>
+            </button>
+            <button class="category__btn" data-filter="Etc">Etc
+                <span class="category__count" data-filter="Etc">1</span>
+            </button>
+        </div>
+        <div class="section__container">
+            <div class="work__projects">
+                <a
+                href="https://github.com/neppiness/Portfolio"
+                class="projects front-end"
+                target="_blank"
+                >
+                    <img src="imgs/my-work/1-Portfolio.png" alt="proj 1" class="project">
+                    <div class="projects__description">
+                        <h3>My portfoilo</h3>
+                        <span>Responsive web design with HTML and CSS</span>
+                    </div>
+                </a>
+                <a
+                href="https://github.com/neppiness/Dwitter_server"
+                class="projects back-end"
+                target="_blank"
+                >
+                    <img src="imgs/my-work/2-Dwitter.png" alt="proj 2" class="project">
+                    <div class="projects__description">
+                        <h3>Dwitter clone coding</h3>
+                        <span>Code lecture using node.js and express with Database frameworks</span>
+                    </div>
+                </a>
+                <a
+                href="https://github.com/neppiness/til"
+                class="projects Etc"
+                target="_blank"
+                >
+                    <img src="imgs/my-work/3-TIL.png" alt="Today I Learned" class="project">
+                    <div class="projects__description">
+                        <h3>TIL</h3>
+                        <span>Notes of what I learned today</span>
+                    </div>
+                </a>
+            </div>
+        </div> 
+    </section>
 
     <!-- TESTIMONIALS -->
+    <!-- DISABLED
     <section id="Testimonials" class="section">
         <h1>Testimonials</h1>
         <h3>See what they say about me</h3>
@@ -297,6 +380,7 @@
             <img src="imgs/people1.jpg" alt="People" class="testimonial__avatar">
         </div>
     </section>
+    -->
 
     <!-- CONTACT -->
     <section id="contact" class="section">
