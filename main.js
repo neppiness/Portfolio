@@ -81,11 +81,9 @@ for (let i = 0; i < works.length; i++) {
 
 workCategories.addEventListener('click', (event) => {
     let eventTargetFilter = event.target.dataset.filter;
-    const filteredWorks = document.getElementsByClassName(eventTargetFilter);
+    if (eventTargetFilter == null) {return;}
 
-    if (filteredWorks === 'none') {
-        return;
-    }
+    const filteredWorks = document.getElementsByClassName(eventTargetFilter);
 
     for (let i = 0; i < works.length; i++) {
         works[i].classList.add('animation--out');
@@ -115,6 +113,9 @@ workCategories.addEventListener('click', (event) => {
 
 // Project filtering button activation setup
 workCategories.addEventListener('click', (event) => {
+    let eventTargetFilter = event.target.dataset.filter;
+    if (eventTargetFilter == null) {return;}
+
     const activatedButton = workCategories.querySelector('.active');
     activatedButton.classList.remove('active');
     let eventTarget = event.target;
@@ -162,8 +163,7 @@ const observerCallback = (entries, observer) => {
         if (entry.target.id == 'nav') {return;}
 
         let targetNavbarMenuItem
-        = document.querySelector('ul[data-link="#'+entry.target.id+'"]');
-        // = document.querySelector('ul[data-link="#'${entry.target.id}'"]');
+            = document.querySelector('ul[data-link="#'+entry.target.id+'"]');
         if(entry.isIntersecting) {
             targetNavbarMenuItem.dataset.selected = 'true';
         } else {
